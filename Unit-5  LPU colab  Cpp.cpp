@@ -461,5 +461,59 @@ int main() {
 
     return 0;
 }
+//question -2 (  Problem Statement
 
+//A car rental company wants to calculate the total cost of a rental based on the number of days and the type of car rented. The company has set rental rates for different car types, which are stored in the following constants:
+//ECONOMY_RATE: $40.00 per day
+//
+//COMPACT_RATE: $50.00 per day
+//
+//STANDARD_RATE: $60.00 per day
+//The program should take as input the number of days and the type of car. The type of car is an optional parameter with a default value of "Economy". The program defines a base class "car" with the virtual function "calculateRentalCost" and three derived classes "EconomyCar", "CompactCar" and "StandardCar" override "calculateRentalCost" to calculate the total cost of the rental.
+//
+//Function signature:
+//double calculateRentalCost(int numDays, string carType = "Economy")
+//
+//Note: This kind of question will help in clearing Wipro recruitment.
+//
+//Input format :
+//
+//An integer numDays (1 <= numDays <= 365), the number of days of the rental.
+//A string carType, the type of car (either "Economy", "Compact", or "Standard").
+//
+//Output format :
+//
+//If the carType is one of the valid types, output double, the total cost of the rental, rounded to 2 decimal places.
+//If the carType is not valid, output "Invalid car type."
+//
+//Code constraints :
+//
+//The rental rates for different car types are stored in constants and cannot be changed.
+//If carType is not specified, the default value is "Economy".
+//
+//The number of days is an integer between 1 and 365, inclusive.
+//The output should be rounded to two decimal places.
+//The program should use the calculateRentalCost function to calculate the rental cost.
+//
+//Sample test cases :
+//Input 1 :
+//3 Compact
+//Output 1 :
+//The total cost of the rental is $150
+//
+//Input 2 :
+//5 Economy
+//Output 2 :
+//The total cost of the rental is $200
+//
+//Input 3 :
+//5 SUV
+//
+//Output 3 :
+//Invalid car type.
+//
+//Input 4 :
+//2 Standard
+//Output 4 :
+//The total cost of the rental is $120
 
