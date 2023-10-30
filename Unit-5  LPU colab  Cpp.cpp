@@ -300,7 +300,8 @@ int main() {
     std::string result = dayOfWeek.getDayOfTheWeek();
     std::cout << result << std::endl;
     return 0;
-//}
+}
+
 //question-5---(case: whitelist syntax virtual)Marc is working as a software developer for a scientific research institute, and his team is currently investigating various types of interesting numbers. One such type is the "Neon Number." A neon number is a special type of positive integer where the sum of the digits of its square is equal to the original number.
 //Your task is to develop a program that can efficiently determine whether a given positive integer is a neon number or not,  while also implementing a virtual destructor for appropriate memory management.
 //For Example,
@@ -313,7 +314,7 @@ int main() {
 //The output displays whether the number is a neon number or not.
 //Refer to the sample output for formatting specifications.
 //Code constraints :
-//N < 20
+//NÂ <Â 20
 //Sample test cases :
 //Input 1 :
 //8
@@ -362,4 +363,51 @@ int main() {
     number.displayResult();
     return 0;
 }
+
+// #--->>>CPP_Unit 5_Lecture 34_RB_CY
+//question-1      case. CPP_Unit 5_Lecture 34_RB_CY 
+
+//Whitelist
+//Set 1:
+//class
+//virtual int min(int x, int y, int z) = 0;
+
+//Kamalesh is building a spell-checking system for a word-processing application. He needs to write a program that calculates the minimum number of operations required to transform one word into another.
+//Specifically, the program takes two strings as input and computes their edit distance. The program defines a base class "EditDistanceCalculator" with a pure virtual function "min" and a derived class "MinEditDistanceCalculator" override the "min" function to calculate the minimum edit distance. Write a program to accomplish this task.
+//Example
+//
+//Input:
+//
+//kitten
+//
+//sitting
+//
+//Output:
+//The edit distance between kitten and sitting is 3
+//
+//Explanation:
+//To transform "kitten" into "sitting", we can perform the following operations:
+//Substitute "s" for "k": sitten
+//Substitute "i" for "e": sittin
+//Insert "g" at the end: sitting
+//Thus, the minimum number of operations required to transform "kitten" into "sitting" is 3.
+//Input format :
+//The input consists of two strings on separate lines.
+//Output format :
+//The output displays the edit distance between the strings.
+//Refer to the sample output for formatting specifications.
+//Code constraints :
+//Length of string1<=100
+//Length of string2<=100
+//Sample test cases :
+//Input 1 :
+//kitten
+//sitting
+//Output 1 :
+//Edit distance between kitten and sitting is 3
+//Input 2 :
+//intention
+//execution
+//Output 2 :
+//Edit distance between intention and execution is 5
 
