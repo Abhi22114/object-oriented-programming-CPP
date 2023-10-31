@@ -517,3 +517,82 @@ int main() {
 //Output 4 :
 //The total cost of the rental is $120
 
+// solution--->>
+
+#include <iostream>
+#include <iomanip>
+#include <string>
+using namespace std;
+
+class Car {
+public:
+    virtual double calculateRentalCost(int numDays, string carType = "Economy") = 0;
+};
+
+class EconomyCar : public Car {
+public:
+    double calculateRentalCost(int numDays, string carType = "Economy") override {
+        if (carType == "Economy") {
+            return 40.00 * numDays;
+        } else {
+            cout << "Invalid car type." << endl;
+            return 0.0;
+        }
+    }
+};
+
+class CompactCar : public Car {
+public:
+    double calculateRentalCost(int numDays, string carType = "Economy") override {
+        if (carType == "Compact") {
+            return 50.00 * numDays;
+        } else {
+            cout << "Invalid car type." << endl;
+            return 0.0;
+        }
+    }
+};
+
+class StandardCar : public Car {
+public:
+    double calculateRentalCost(int numDays, string carType = "Economy") override {
+        if (carType == "Standard") {
+            return 60.00 * numDays;
+        } else {
+            cout << "Invalid car type." << endl;
+            return 0.0;
+        }
+    }
+};
+
+int main() {
+    int numDays;
+    string carType;
+    cin >> numDays >> carType;
+
+    Car *car;
+    EconomyCar eCar;
+    CompactCar cCar;
+    StandardCar sCar;
+
+    if (carType == "Economy") {
+        car = &eCar;
+    } else if (carType == "Compact") {
+        car = &cCar;
+    } else if (carType == "Standard") {
+        car = &sCar;
+    } else {
+        cout << "Invalid car type." << endl;
+        return 0;
+    }
+
+    double totalCost = car->calculateRentalCost(numDays, carType);
+    if (totalCost != 0.0) {
+        cout << fixed << setprecision(0);
+        cout << "The total cost of the rental is $" << totalCost << endl;
+    }
+
+    return 0;
+}
+
+
