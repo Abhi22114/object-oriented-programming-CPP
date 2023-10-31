@@ -595,4 +595,106 @@ int main() {
     return 0;
 }
 
+//---->>>CPP_Unit 5_Lecture 35_RB_COD-->>
+
+// question-->>>Single File Programming Question
+
+// Problem Statement
+// Design a program to calculate the total price of products in an online store based on their specific pricing rules. The program should utilize an abstract class called "Product" to represent a generic product and provide a framework for calculating the total price. Implement two derived classes, "Electronics" and "Apparel," which inherit from the abstract class and provide their own implementations for calculating the total price based on their specific pricing rules.
+
+
+// Note: The abstract class "Product" serves as a blueprint for the derived classes "Electronics" and "Apparel." It enforces the implementation of a "calculateTotalPrice" method in the derived classes to calculate the total price based on their specific pricing rules. This approach ensures code reusability and flexibility to accommodate various types of products with their unique pricing calculations.
+
+// Note: This kind of question will help in clearing mPhasis recruitment.
+
+// Input format :
+
+// The first line of the input represents the price of the electronics product.
+
+// The second line of the input represents the discount percentage for the electronics product.
+
+// The third line of the input represents the price of the apparel product.
+
+// The fourth line of the input represents the tax percentage for the apparel product.
+
+// Output format :
+
+// The total price of the electronics product after applying the discount.
+
+// The total price of the apparel product after applying the tax.
+
+// Code constraints :
+
+// The price, discount, and tax values are non-negative.
+
+// Sample test cases :
+// Input 1 :
+// 500.00
+// 15.00
+// 250.00
+// 8.5
+// Output 1 :
+// 425.00
+// 271.25
+// Input 2 :
+// 2000.00
+// 15.5
+// 300.00
+// 12.00
+// Output 2 :
+// 1690.00
+// 336.00
+// Note :
+// The program will be evaluated only after the “Submit Code” is clicked.
+// Extra spaces and new line characters in the program output will result in the failure of the test case.
+
+// ans
+
+#include <iostream>
+#include <iomanip>
+using namespace std;
+
+class Product {
+public:
+    virtual double calculateTotalPrice() = 0;
+};
+
+class Electronics : public Product {
+private:
+    double price;
+    double discount;
+
+public:
+    Electronics(double p, double d) : price(p), discount(d) {}
+
+    double calculateTotalPrice() override {
+        return price - (price * (discount / 100.0));
+    }
+};
+
+class Apparel : public Product {
+private:
+    double price;
+    double tax;
+
+public:
+    Apparel(double p, double t) : price(p), tax(t) {}
+
+    double calculateTotalPrice() override {
+        return price + (price * (tax / 100.0));
+    }
+};
+
+int main() {
+    double electronicsPrice, electronicsDiscount, apparelPrice, apparelTax;
+    cin >> electronicsPrice >> electronicsDiscount >> apparelPrice >> apparelTax;
+
+    Electronics electronics(electronicsPrice, electronicsDiscount);
+    Apparel apparel(apparelPrice, apparelTax);
+
+    cout << fixed << setprecision(2) << electronics.calculateTotalPrice() << endl;
+    cout << fixed << setprecision(2) << apparel.calculateTotalPrice() << endl;
+
+    return 0;
+}
 
