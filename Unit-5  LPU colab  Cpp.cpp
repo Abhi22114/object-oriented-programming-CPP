@@ -698,3 +698,77 @@ int main() {
     return 0;
 }
 
+// question--2.
+// The Human Resources Department at ABC Corporation needs a program to manage employee information and find the highest-paid employee. They require a concrete class named "Employee" to represent individual employee details. The "Employee" class should be a concrete implementation with private attributes to store the employee name, employee ID, and monthly salary. The class should provide methods to update the salary and display the employee's information.
+
+// Once the user provides the employee details, the program should create an array of "Employee" objects and store each employee's information in the array.
+
+// Next, the program should find the highest-paid employee among the entered employees and display their details, including their name, employee ID, and monthly salary.
+
+// To achieve this, the program should define the "Employee" class as a concrete class with appropriate member functions to manage the employee information. The class should include a constructor to initialize the employee details, a function to update the salary, and a function to display the employee's information.
+
+// Finally, after displaying the highest-paid employee's details, the program should deallocate the memory used for the array of employees before terminating.
+
+// Input format :
+
+// The first line of input contains an integer, which represents the total number of employees in the company.
+
+// For each employee, there will be three lines of input:
+
+// The employee's name (a string containing alphabets and spaces).
+// The employee's ID (an integer)
+// The employee's salary (an integer)
+// Output format :
+
+// The output will display the details of the highest-paid employee.
+
+// Refer to the sample output for formatting specifications.
+
+// Code constraints :
+
+// The number of employees will be a positive integer (1 <= numEmployees <= 1000).
+
+// Each employee's name will be a string containing alphabets and spaces only. The length of the name will not exceed 100 characters.
+
+// Employee ID will be a positive integer (1 <= employeeID <= 10000).
+
+// Salary will be a floating-point number, representing the employee's monthly salary. Salary will be in the range of 1000 to 100000.
+
+// Sample test cases :
+// Input 1 :
+// 5
+// Alice Anderson
+// 201
+// 42000
+// Bob Brown
+// 202
+// 48000
+// Claire Carter
+// 203
+// 51000
+// David Davis
+// 204
+// 44000
+// Eva Evans
+// 205
+// 49000
+// Output 1 :
+// Employee Name: Claire Carter
+// Employee ID: 203
+// Salary: 51000
+
+// Input 2 :
+// 3
+// John Doe
+// 101
+// 50000
+// Jane Smith
+// 102
+// 55000
+// Michael Johnson
+// 103
+// 48000
+// Output 2 :
+// Employee Name: Jane Smith
+// Employee ID: 102
+// Salary: 55000
