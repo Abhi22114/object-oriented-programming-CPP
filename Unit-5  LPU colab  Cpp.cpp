@@ -772,3 +772,67 @@ int main() {
 // Employee Name: Jane Smith
 // Employee ID: 102
 // Salary: 55000
+
+#include <iostream>
+#include <string>
+#include <vector>
+
+class Employee {
+private:
+    std::string name;
+    int employeeID;
+    int salary;
+
+public:
+    Employee(const std::string& empName, int ID, int empSalary) {
+        name = empName;
+        employeeID = ID;
+        salary = empSalary;
+    }
+
+    void updateSalary(int newSalary) {
+        salary = newSalary;
+    }
+
+    void displayInfo() const {
+        std::cout << "Employee Name: " << name << std::endl;
+        std::cout << "Employee ID: " << employeeID << std::endl;
+        std::cout << "Salary: " << salary << std::endl;
+    }
+
+    int getSalary() const {
+        return salary;
+    }
+};
+
+int main() {
+    int numEmployees;
+    std::cin >> numEmployees;
+
+    std::vector<Employee> employees;
+
+    for (int i = 0; i < numEmployees; ++i) {
+        std::string empName;
+        int ID, empSalary;
+        std::cin.ignore(); // Ignore the newline after the number
+        std::getline(std::cin, empName);
+        std::cin >> ID >> empSalary;
+
+        Employee newEmployee(empName, ID, empSalary);
+        employees.push_back(newEmployee);
+    }
+
+    int highestSalary = 0;
+    int highestSalaryIndex = 0;
+
+    for (int i = 0; i < numEmployees; ++i) {
+        if (employees[i].getSalary() > highestSalary) {
+            highestSalary = employees[i].getSalary();
+            highestSalaryIndex = i;
+        }
+    }
+
+    employees[highestSalaryIndex].displayInfo();
+
+    return 0;
+}
